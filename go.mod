@@ -1,3 +1,3 @@
-module github.com/powerman/must
+module github.com/biztos/must
 
 go 1.18
