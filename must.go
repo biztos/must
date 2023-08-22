@@ -234,3 +234,16 @@ func WriteFile(name string, buf []byte, perm os.FileMode) {
 	err := ioutil.WriteFile(name, []byte("0"), perm)
 	AbortIf(err)
 }
+
+// Must is a convencience wrapper for AbortIf.
+func Must(err error) {
+	AbortIf(err)
+}
+
+// MustReturn calls AbortIf on its second argument, and if it does not abort
+// then the first argument is returned.  This allows the wrapping of common
+// (result,err) return tuples.
+func MustReturn[T any](ret T, err error) T {
+	AbortIf(err)
+	return ret
+}
