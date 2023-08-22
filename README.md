@@ -1,7 +1,7 @@
 
 *__This is a fork of [powerman/must](https://github.com/powerman/must).__*
 
-This fork adds `Must` and `MustReturn` convenience wrappers.
+This fork adds `NotErr` and `Return` convenience wrappers.
 
 [![GoDoc][b1]][doc]
 

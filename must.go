@@ -235,15 +235,15 @@ func WriteFile(name string, buf []byte, perm os.FileMode) {
 	AbortIf(err)
 }
 
-// Must is a convencience wrapper for AbortIf.
-func Must(err error) {
+// NotErr is a convencience wrapper for AbortIf.
+func NotErr(err error) {
 	AbortIf(err)
 }
 
-// MustReturn calls AbortIf on its second argument, and if it does not abort
+// Return calls AbortIf on its second argument, and if it does not abort
 // then the first argument is returned.  This allows the wrapping of common
 // (result,err) return tuples.
-func MustReturn[T any](ret T, err error) T {
+func Return[T any](ret T, err error) T {
 	AbortIf(err)
 	return ret
 }
